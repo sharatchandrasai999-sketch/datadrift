@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datadrift"
+version = "0.1.0"
+description = "Dataset drift detector comparing two CSVs (schema changes and numeric drift)"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0"]
+
+[project.scripts]
+datadrift = "datadrift.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
