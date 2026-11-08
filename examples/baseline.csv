@@ -1,1 +1,21 @@
-# placeholder
+customer_id,age,monthly_spend,plan,tenure_months
+1,38,46.47,premium,19
+2,32,50.52,basic,25
+3,40,53.58,basic,23
+4,29,51.05,premium,2
+5,30,50.66,basic,30
+6,45,46.49,basic,23
+7,31,50.68,premium,11
+8,39,46.4,basic,8
+9,29,47.77,basic,32
+10,44,50.45,premium,4
+11,34,47.07,basic,14
+12,29,49.35,basic,19
+13,30,50.33,premium,9
+14,41,50.57,basic,16
+15,41,50.48,basic,26
+16,30,51.46,premium,26
+17,35,46.82,basic,32
+18,30,50.57,basic,6
+19,45,47.5,premium,11
+20,41,46.78,basic,29
