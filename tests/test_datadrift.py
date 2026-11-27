@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from datadrift.detect import DriftError, compare, format_text, load_csv
+from datadrift.detect import DriftError, compare
 
 EXAMPLES = Path(__file__).resolve().parents[1] / "examples"
 
@@ -100,6 +100,7 @@ def test_cli_text_and_json_on_examples(tmp_path):
     text = subprocess.run(
         [sys.executable, "-m", "datadrift", str(EXAMPLES / "baseline.csv"), str(EXAMPLES / "current.csv")],
         capture_output=True,
+        check=False,
         text=True,
     )
     assert text.returncode == 0, text.stderr
@@ -113,6 +114,7 @@ def test_cli_text_and_json_on_examples(tmp_path):
         [sys.executable, "-m", "datadrift", str(EXAMPLES / "baseline.csv"),
          str(EXAMPLES / "current.csv"), "--format", "json"],
         capture_output=True,
+        check=False,
         text=True,
     )
     assert js.returncode == 0, js.stderr
@@ -128,6 +130,7 @@ def test_cli_missing_file_exits_nonzero(tmp_path):
     result = subprocess.run(
         [sys.executable, "-m", "datadrift", str(tmp_path / "missing.csv"), str(tmp_path / "also-missing.csv")],
         capture_output=True,
+        check=False,
         text=True,
     )
     assert result.returncode != 0
